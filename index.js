@@ -1,16 +1,11 @@
-var admin = require("firebase-admin");
-var serviceAccount = require("../teammate/serviceAccountKey.json");
+const admin = require("firebase-admin");
+const serviceAccount = require("./serviceAccountKey.json");
 const transliteration = require("transliteration");
-const { sunday } = require("rethinkdb/ast");
-
-
 
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount)
 });
-
-
 
 
 const collectionRef = admin.firestore().collection('games');
@@ -32,6 +27,7 @@ collectionRef.onSnapshot((snapshot) => {
 async function sendMessageToCitySubscribers(city, creatorId, description) {
   const tokens = await getSendTokens(city, creatorId);
   if (tokens === undefined || tokens.length == 0) return;
+  
   const message = {
     notification: {
       title:`Новая игра!`,
@@ -84,4 +80,5 @@ function citySubscribersTokensWithoutGameCreator(subscribers, creatorId) {
   }
   return subscribers;
 }
+
 
