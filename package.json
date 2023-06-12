@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Backend service for sending push notifications from Firebase to mobile client",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "Angelina Gromova",
   "license": "ISC",
   "dependencies": {
