@@ -12,7 +12,7 @@ class GameModel {
         const isCurrentlyAdd = change.doc.readTime.isEqual(change.doc.updateTime);
         const isAddType = change.type == 'added';
 
-        // if (isAddType && isCurrentlyAdd) {
+        if (isAddType && isCurrentlyAdd) {
           const doc = change.doc;
 
           const city = doc.get('city');
@@ -23,7 +23,7 @@ class GameModel {
           const localizedSport = this.localeSport(sport);
 
           onChange(city, creatorId, localizedSport, dateTime);
-        // }
+        }
       });
     });
   }
