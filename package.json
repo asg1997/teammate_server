@@ -2,6 +2,7 @@
   "name": "teammate",
   "version": "1.0.0",
   "description": "Backend service for sending push notifications from Firebase to mobile client",
+  "type": "commonjs",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -9,8 +10,12 @@
   "author": "Angelina Gromova",
   "license": "ISC",
   "dependencies": {
+    "date-and-time": "^3.0.2",
     "express": "^4.18.2",
     "firebase-admin": "^11.9.0",
     "transliteration": "^2.3.5"
+  },
+  "devDependencies": {
+    "typescript": "^5.1.6"
   }
 }
